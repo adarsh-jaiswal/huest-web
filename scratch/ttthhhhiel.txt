@@ -1,0 +1,13 @@
+When a student or a working professional , have to move to a new location for study or work,  it's very difficult for them to find a decent place to live and home cooked food.In India ,there are a lot of students who don't want to stay in hostel for a number of reasons.I am building a website and a mobile application HUEST where student/working professionals will be treated as GUEST and the people who will be providing accommodation and food facility will be the HOST. with the help of Huest:-
+1.Guest can login through his app and find host near his/her required location,can give feedback about the host.
+2. Host can register the details about the type of accommodation and food facility and the charges. If the host can only provide food facility he/she can also register. 
+With the help of Huest a large number of indian housewives can earn money while sitting at their home,plus the students and the working professionals can find accommodation while sitting at their current location before moving.
+the prototype is in development phase .
+
+
+
+When a student or a working professional , have to move to a new location for study or work,  it's very difficult for them to find a decent place to live and home cooked food.In India ,there are a lot of students who don't want to stay in hostel for a number of reasons.They have to physically search for accommodation and food facility. 
+>I am building a website and a mobile application HUEST where student/working professionals will be treated as GUEST and the people who will be providing accommodation and food facility will be the HOST. with the help of Huest:-
+1.A large number of housewives can earn money while sitting at their home.
+2.The students and the working professionals can find accommodation as well as food facility while sitting at their current location before moving.
+the prototype is in development phase .
