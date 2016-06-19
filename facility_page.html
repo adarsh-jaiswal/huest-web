@@ -1,0 +1,399 @@
+<!DOCTYPE>
+
+<html>
+	<head>
+		<script src="assets/js/jquery-1.10.2.js"></script>
+		<script src="assets/js/firebase.js"></script>
+		<link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+		<link href="bootstrap/font-awesome.min.css" rel="stylesheet"/>
+        <script src="assets/js/logout.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+          <script src="assets/js/facilityApp.js"></script>
+     
+		
+		<style>
+.jumbotron{
+    background-color:#2E2D88;
+    color:white;
+}
+/* Adds borders for tabs */
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.nav-tabs {
+    margin-bottom: 0;
+}
+</style>
+ 
+		<!--<script>
+			function readURL(input)
+			{
+				var reader=new FileReader();
+				reader.onload=function(e){
+					$('#user_image').attr('src',e.target.result);
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+			
+			$(document).ready(function(){
+				$("#sharing").click(function(){
+					$("#panel3").slideToggle("slow");
+				});
+			});
+            $(document).ready(function(){
+				$("#flat").click(function(){
+					$("#panel4").slideToggle("slow");
+				});
+			});
+            $(document).ready(function(){
+				$("#chkSingle").click(function(){
+					$("#rate").slideToggle("fast");
+				});
+			});
+             $(document).ready(function(){
+				$("#chkSingle").click(function(){
+					$("#singleRate").slideToggle("fast");
+				});
+			});
+             $(document).ready(function(){
+				$("#chkSingle").click(function(){
+					$("#rateTrial").slideToggle("fast");
+				});
+			});
+			$(document).ready(function(){
+				$("#chkSingle").click(function(){
+					$("#text").slideToggle("fast");
+				});
+			});
+            $(document).ready(function(){
+				$("#chkSharing").click(function(){
+					$("#rate2").slideToggle("fast");
+				});
+			});
+            $(document).ready(function(){
+				$("#chkSharing").click(function(){
+					$("#sharingRate").slideToggle("fast");
+				});
+			});
+            $(document).ready(function(){
+				$("#chkSharing").click(function(){
+					$("#rateTrial2").slideToggle("fast");
+				});
+			});
+           
+		</script>-->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Host</title>
+		<!-- BOOTSTRAP CORE STYLE CSS -->
+		<link href="assets/css/bootstrap.css" rel="stylesheet" />
+		<!-- FONT AWESOME CSS -->
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+		<!-- STYLE SWITCHER  CSS -->
+		<link href="assets/css/styleSwitcher.css" rel="stylesheet" />
+		<!-- CUSTOM STYLE CSS -->
+		<link href="assets/css/style.css" rel="stylesheet" />  
+		<!--GREEN STYLE VERSION IS BY DEFAULT, USE ANY ONE STYLESHEET FROM TWO STYLESHEETS (green or red) HERE-->
+		<link href="assets/css/themes/green.css" id="mainCSS" rel="stylesheet" />   
+		<!-- Google	Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="navbar navbar-inverse navbar-fixed-top move-me" id="menu">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						&nbsp;<a class="navbar-brand" href="#">HuestIN</a>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li ><a href="index.html">HOME</a></li>
+							 <li><a href="index.html">FEATURES</a></li>
+						   
+							<!--<li><a href="index.html">DEVELOPERS</a></li>-->
+							 
+							 <li><a href="index.html">CONTACT</a></li>
+							 <li><a href="login.html" onclick="logout()">LOGOUT</a></li>
+							 <li><a href="mailto:info@domain.com?Subject=Product%20Enquiry" target="_top"> <i class="fa fa-envelope-o"></i><span class="home-mail">e-mail: adarshakijais@gmail.com</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+           
+<div class="container" ng-app = "mainApp" ng-controller = "facilityController" >
+	
+    <legend><h2 class="text-center">Welcome <span id="name"></span></h2></legend>	
+    
+				<h3 align="center">Update Facility</h3>
+                    <p style="font-size:15px;">Fill both sections if you can provide Acommodation and Food,else Fill only Food or only Accommodation.</p>
+				   
+                  <ul class="nav nav-pills">
+  <li class="active col-lg-2 col-sm-5"><a data-toggle="tab" href="#food" >FOOD</a></li>
+  <li class="col-lg-3 col-sm-5"><a data-toggle="tab" href="#accommodation">ACCOMMODATION</a></li>
+ 
+
+</ul>
+     <div class="tab-content">
+         
+<div id="food" class="tab-pane fade in active">
+                   <form class="form-horizontal" role="form"> 
+					<div class="form-group">
+       
+      <label class="control-label col-lg-4 col-md-5 col-sm-5" for="">Type:</label>
+      <div class="radio">
+  <label class="control-label col-lg-2 col-md-2 col-sm-3">&nbsp;
+    <input type="radio" name="category" id="" value="Veg" checked>
+   Strictly Veg </label>
+
+  <label class="control-label col-lg-2 col-md-3 col-sm-3">
+    <input type="radio" name="category" id="" value="Veg" >
+   Veg & Non-Veg both</label>
+</div>
+          </div>
+    
+      
+      <div class="form-group">
+      <label class="control-label col-lg-4 col-sm-5" for="limitsFood">Limits:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="" placeholder="Maximum number of people that you can serve" id="limitsFood">
+      </div>
+    </div>
+			 
+      <div class="form-group">
+                    <label class="control-label col-lg-4 col-sm-5" for="description">Description of food:</label>
+                    <div class="col-sm-5">
+                        <textarea name="description" id="description" class="form-control" rows="5" placeholder="Give a brief description of the Dishes that you cook." required></textarea>
+                       
+                    </div>
+                </div>
+      	<!--<h4>After registration you can post your menu with rates daily/weekly/monthly.
+                                </h4>	-->
+                   
+    <div class="form-group">
+      <label class="control-label col-lg-4 col-sm-5" for="limitsFood">Per Day charge:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="pdc" placeholder="" id="pdc">
+      </div>
+    </div>		
+                       
+	<div class="form-group">
+      <label class="control-label col-lg-4 col-sm-5" for="limitsFood">Per Week charge:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="pwc" placeholder="" id="pwc">
+      </div>
+    </div>									
+                       
+   <div class="form-group">
+      <label class="control-label col-lg-4 col-sm-5" for="limitsFood">Per Month charge:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="pmc" placeholder="" id="pmc">
+      </div>
+    </div>	
+								
+                       					        
+        </form>
+				</div>
+                 <div id="accommodation" class="tab-pane fade" style="">
+                        <form class="form-horizontal" role="form">
+                             <div class="form-group">
+                       <label class="control-label col-lg-4 col-sm-5" for="descriptionOfPlace">Description of Place:</label>
+                    <div class="col-sm-5">
+                        <textarea name="descriptionOfPlace" id="descriptionOfPlace " class="form-control" rows="5" placeholder="nearby colleges and offices from your place." required></textarea>
+                       
+                    </div>
+                </div>
+                         <div class="form-group ">
+                       <label  class="col-lg-offset-2 col-lg-5 col-sm-offset-2  col-sm-10" for="trialStay">Do you want to provide trial period of stay for the guest? <span  ><input type="checkbox"  ng-model="trialStay" name="trialStay" id="trialStay"  required/>
+                       
+                    </span></label>
+                              
+                </div>    
+                    <span style="font-size:15px;">*Select either based on sharing or based on full flat on rent or both.</span><br>
+                   
+                                        
+              <div class="form-group" >
+                  
+                 
+                  <label class="control-label col-lg-4 col-sm-5 col-xs-12" for="sharing">Sharing: <span>  
+                        <input type="checkbox"  name="sharing"  ng-model="sharing" value="sharing"   id="sharing" class="styled" />
+                      </span></label>
+                
+                      
+                 
+                  
+                  <label  class="control-label col-lg-4 col-sm-5  col-xs-12" for="flat">Flat:  <span><input type="checkbox"  name="flat"  ng-model="flat" value="flat"   id="flat" class="styled" />
+                  </span> </label>
+                
+                      
+                        
+              </div>                          
+                                       <!-- <table border="0" style="width:550px;position:relative">
+						<tr >
+									<td width="200px"><p style="width:200px;">Description of Place:</p></td>
+									<td colspan="2"><input type="text" id="descriptionOfPlace" size="20px;"/></td>
+                                      <td colspan="2" style="font-size:10px;"><p style="border:1px solid red;width:200px;">*nearby colleges and offices from your place.</p></td>
+							<td>
+								<p style="position:absolute;top:0px;width:180px;font-size:17px">Description of Place:</p>
+							</td>
+							<td>
+								<textarea></textarea>
+							</td>
+							<td>
+								<p style="font-size:14px;padding-left:10px;">*nearby colleges and offices from your place.</p>
+							</td>
+                        </tr>
+                        <tr class="tr1">
+							<td width="180px">Images:</td>			
+							<td>
+								<input type="file" onchange="readURL(this)" style="width:90px"/>
+							</td>
+									<td colspan="2" ><input type="file" name="file" onchange="readURL(this)" style="position:absolute;bottom:10px;width:220px;right:120px"/></td>
+							<td>
+								<div class="image_div">
+									<img src="images/edit_user.png" id="user_image" height="110px" width="130px" style="cursor:hand;"/>
+								</div>
+                            </td>
+                        </tr>
+                    </table>-->
+                         
+                    <div ng-show="sharing" id="" style="height:250px;position:relative;">
+                        
+						<table class="table table-condensed" >
+                        <thead>
+                  <tr>
+                    <th>Sharing Type</th>
+                    <th>Available</th>
+                    <th>Rate</th>
+                  </tr>
+                            </thead>
+                                        <tr >
+								<td>Single:</td>
+								<td><input type="checkbox" id="chkSingle"/></td>
+								
+								<td><input type="text" id="singleRate" size="10px"/></td>
+							</tr>
+                            <tr ng-show="trialStay"  id="rateTrial">
+								<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+								<td width="30px"><input type="checkbox" id="chkSingleTrial"/></td>
+								
+								<td><input type="text" id="singleTrialRate" size="10px"/></td>
+							</tr>
+							<tr >
+								<td>2-Sharing:</td>
+								<td><input type="checkbox" id="chkSharing"/></td>
+								
+								<td><input type="text" id="sharingRate" size="10px"/></td>
+							</tr>
+							<tr ng-show="trialStay"  id="rateTrial2">
+								<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+								<td width="30px"><input type="checkbox" id="chkSharingTrial"/></td>
+								
+								<td><input type="text" id="sharingTrialRate" size="10px"/></td>
+							</tr>		
+							<tr >
+								<td width="200px">Limits:</td>
+								<td><input type="text" id="limits" placeholder="" size="10px"/></td>
+                                <td colspan="2" width="200px" style="font-size:10px;">*total number of guests that you can accommodate.
+								</td>
+							</tr>		
+						</table>
+                        </div>
+					
+                        <br><br><br>    
+                     <div ng-show="flat" id="" >
+                        <table class="table table-condensed">
+                              <thead>
+                              <tr>
+                                <th>Flat Type</th>
+                                <th>Available</th>
+                                <th>Rate</th>
+                              </tr>
+                            </thead>
+						
+							<tr >
+								<td>1 BHK:</td>
+								<td><input type="checkbox" id="chkOneBHK"/></td>
+								
+								<td><input type="text" id="oneBHKRate" size="10px"/></td>
+							</tr>
+                            <tr ng-show="trialStay"  id="">
+								<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+								<td width="30px"><input type="checkbox" id="chkTrial"/></td>
+								
+								<td><input type="text" id="trialOneBHK" size="10px"/></td>
+							</tr>
+							<tr >
+								<td>2 BHK:</td>
+								<td><input type="checkbox" id="chktwoBHK"/></td>
+								
+								<td><input type="text" id="twoBHKRate" size="10px"/></td>
+							</tr>
+							<tr ng-show="trialStay"  id="">
+								<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+								<td width="30px"><input type="checkbox" id="chkTrial"/></td>
+								
+								<td><input type="text" id="trialtwoBHK" size="10px"/></td>
+							</tr>		
+						</table>
+					</div>
+                            
+                     </form>
+                </div>
+         </div>		
+    </div>
+        
+                    
+                
+                   <div class="div-button" style="width:230px;position:relative;left:50px;bottom:70px;">
+						<br><br><br><input type="submit" value="Continue" onclick="hostFormValidation()" class="btn btn-success"/>
+					</div>
+				
+            
+            </div>
+        
+         <script >
+		var userType;
+		var user=sessionStorage.getItem("username");
+		var encodedEmail = user.replace(/[.]/g , ",");
+		var ref = new Firebase("https://shop-together.firebaseio.com/").child("USERS");
+		ref.on("value", function(snapshot) {
+			userType=snapshot.child(encodedEmail).val();
+			var userTypeRef = new Firebase("https://shop-together.firebaseio.com/").child(userType).child(encodedEmail);
+			userTypeRef.on("value", function(snapshot) {
+                
+				document.getElementById("name").innerHTML=snapshot.child("firstName").val();
+			}, function (errorObject) {
+				console.log("The read failed: " + errorObject.code);
+			});    
+		}, function (errorObject) {
+			console.log("The read failed: " + errorObject.code);
+		});
+
+	</script>
+	</body>
+    <!--FOOTER SECTION END-->
+		<!--  Jquery Core Script -->
+		<script src="assets/js/jquery-1.10.2.js"></script>
+		<!--  Core Bootstrap Script -->
+		<script src="assets/js/bootstrap.js"></script>
+		 <!--  Scrolling Reveal Script -->
+		<script src="assets/js/scrollReveal.js"></script>
+		<!--  Scroll Scripts --> 
+		<script src="assets/js/jquery.easing.min.js"></script>
+		 <!--  Style Switcher Scripts -->
+		<script src="assets/js/styleSwitcher.js"></script>
+			<!--  Custom Scripts -->    
+		<script src="assets/js/custom.js"></script>
+</html>
+

@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+        <script src="assets/js/firebase.js"></script>
+		<script src="assets/js/login.js"></script>
+        <script src="assets/js/hostFirebase.js"></script>
+   
+    <!-- =========================================================================================================-->
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+     <!-- STYLE SWITCHER  CSS -->
+<link href="assets/css/styleSwitcher.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />  
+     <!--GREEN STYLE VERSION IS BY DEFAULT, USE ANY ONE STYLESHEET FROM TWO STYLESHEETS (green or red) HERE-->
+     <link href="assets/css/themes/green.css" id="mainCSS" rel="stylesheet" />   
+  <!-- Google	Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+	 
+</head>
+<body >
+    <!--END STYLE SWITCHER-->
+ <div class="navbar navbar-inverse navbar-fixed-top move-me" id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                &nbsp;<a class="navbar-brand" href="#">HuestIN</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="index.html">HOME</a></li>
+                     <li><a href="index.html">FEATURES</a></li>
+                   
+                   <!-- <li><a href="index.html">DEVELOPERS</a></li>-->
+                     
+                     <li><a href="index.html">CONTACT</a></li>
+                    <li><a href="registration.html">REGISTER</a></li>
+                     
+                     <li><a href="mailto:info@domain.com?Subject=Product%20Enquiry" target="_top"> <i class="fa fa-envelope-o"></i><span class="home-mail">e-mail: adarshakijais@gmail.com</span></a></li>
+                </ul>
+            </div>
+           
+        </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+   <!-- ==============================================================================================-->  
+                              
+         <div class="container">        
+              <div id="loginbox" style="margin-top:150px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign In</div>
+                        <!--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>-->
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" class="form-horizontal" role="form">
+                                    
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><span class="fa fa-user"></span></span>
+                                        <input id="email" type="text" class="form-control" name="email"  placeholder="email">                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                        <input id="password" type="password" class="form-control" name="password" placeholder="password">
+                                    </div>
+                                    
+                             <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls">
+                                      <a id="btn-login" href="#" onclick="loginTest()" class="btn btn-success">Login  </a>
+                                      
+                                    </div>
+                                </div>
+                         <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                            Don't have an account! 
+                                        <a href="registration.html" >
+                                            Sign Up Here
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </form>     
+              </div>                     
+                    </div>  
+        </div>   
+    </div>
+    
+    
+    
+
+		<!--	<div class="content-register">
+				<div class="register" align="center">    
+    
+                       Login
+                                                          
+                         
+
+
+    <table>
+      <tr>
+        <td>Email:</td><td><input type="text" name="email" id="email"></td>
+     </tr>
+    <tr>
+
+        <td>Password:</td><td><input type="password" name="pass" id="password"></td>
+    </tr>
+
+        <tr><td>new user click on REGISTER now!</td><td><input type="button" value="Submit" onclick="loginTest()"></td>
+
+     
+        </tr>
+
+    </table>
+ </div>
+    </div>-->
+    <script>
+            var user=sessionStorage.getItem("registrationEmail");
+            if(user!="null")
+                {
+                document.getElementById("email").value=user;
+                sessionStorage.setItem("registrationEmail",null);
+                }     
+    </script>
+</body>
+    <!--FOOTER SECTION END-->
+    <!--  Jquery Core Script -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="assets/js/bootstrap.js"></script>
+     <!--  Scrolling Reveal Script -->
+    <script src="assets/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts --> 
+    <script src="assets/js/jquery.easing.min.js"></script>
+     <!--  Style Switcher Scripts -->
+    <script src="assets/js/styleSwitcher.js"></script>
+        <!--  Custom Scripts -->    
+    <script src="assets/js/custom.js"></script>
+    </html>

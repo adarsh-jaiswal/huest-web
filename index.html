@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Landing Page Template</title>
+    <title>Huest</title>
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME CSS -->
@@ -17,7 +17,9 @@
      <!--GREEN STYLE VERSION IS BY DEFAULT, USE ANY ONE STYLESHEET FROM TWO STYLESHEETS (green or red) HERE-->
      <link href="assets/css/themes/green.css" id="mainCSS" rel="stylesheet" />   
   <!-- Google	Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+	<script src="assets/js/firebase.js"></script>
+    <script src="assets/js/login.js"></script>
 </head>
 <body >
     <div class="switcher" style="left:-50px;">
@@ -40,18 +42,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                &nbsp;<a class="navbar-brand" href="#">HUEST</a>
+                &nbsp;<a class="navbar-brand" href="#">HuestIN
+
+</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li ><a href="#home">HOME</a></li>
                      <li><a href="#features">FEATURES</a></li>
                    
-                    <li><a href="#developers">DEVELOPERS</a></li>
+                   <!-- <li><a href="#developers">DEVELOPERS</a></li>-->
                      
                      <li><a href="#contact">CONTACT</a></li>
-                     <li><a href="#login">LOGIN</a></li>
-                     <li><a href="registrationForm.html">SIGNUP</a></li>
+                     <li><a href="login.html">LOGIN</a></li>
+                     <li><a href="registration.html">REGISTER</a></li>
                    
                      <li><a href="mailto:info@domain.com?Subject=Product%20Enquiry" target="_top"> <i class="fa fa-envelope-o"></i><span class="home-mail">e-mail: adarshakijais@gmail.com</span></a></li>
                 </ul>
@@ -66,10 +70,10 @@
            <div class="row text-center" >
            
                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-<h2 data-scroll-reveal="enter from the bottom after 0.1s"><strong>welcome to huest! </strong> </h2>
+<h2 data-scroll-reveal="enter from the bottom after 0.1s"><strong>welcome to huestIN! </strong> </h2>
                                    
                    <p data-scroll-reveal="enter from the bottom after 0.8s">Finding a place to stay which also provides you with home cooked food had never been so easy.
-                We provide you a platform where we help you find either a host or a guest.You are a host if you want to provide accomodation or food facility or both.You are a guest if you are looking for a place to stay
+                We provide you a platform where we help you find either a host or a guest.You are a host if you want to provide accommodation or food facility or both.You are a guest if you are looking for a place to stay
  in a new location which also provides you with home cooked food.                        
                          
                        </p>
@@ -103,57 +107,51 @@
                 
                </div>
      <div class="row " >
-           
+           <div class="row text-center just-pad" >
               <div class="col-lg-6 col-md-6 col-sm-6" data-scroll-reveal="enter from the left after 0.4s" >
-                        <div class="media">
-                            <div class="pull-left"><em class=" fa fa-history fa-5x "></em></div>
-                            <div class="media-body">
-                                <h4 class="media-heading"><strong>Get a Host,Anywhere,Anytime </strong></h4>
-                                <p>Whenever you have to move to a new loaction find a host by sitting in your home who will provide you with the accomodation or food facility or both at one place.  
-                                    
+                        <i class="fa fa-users fa-5x"></i>
+                            
+                               <h4><strong>Find Host </strong></h4>
+                                <p>Whenever you have to move to a new location, find a host by sitting at your home 
+                                 who will provide you with the accommodation or food facility or both at one place.  
+                                 Find homechefs who will provide you with delicious homecooked food near your location, browse the menu provided by the host then make your initial payment through huestIN depending on the rate. 
+                                </p>
+
+                            </div>
+                    
+         <div class="col-lg-6 col-md-6 col-sm-6" data-scroll-reveal="enter from the right after 0.7s">
+                        <i class="fa fa-user fa-5x"></i>
+                         <h4><strong> Become a Host </strong></h4>
+                              <p>You can become a host if you
+                                   have a place which you want to rent for the guest or provide food or both.Housewives have a great opportunity to just serve food to the guest and earn money.You can also rent your place to tourists who want to stay for a specified period of days. 
                                 </p>
 
                             </div>
                         </div>
                     </div>
-               <div class="col-lg-6 col-md-6 col-sm-6" data-scroll-reveal="enter from the right after 0.7s">
-                        <div class="media">
-                            <div class="pull-left">
-                                <i class=" fa fa-ra fa-5x "></i>
-
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading"><strong> Become a Host </strong></h4>
-                              <p>
-                                   Have a place which you want to rent for the guest or provide food or both.Housewives have a great oppurtinity to just serve food to the guest and earn money. 
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
-              
-            </div>
+       
+        
                 <div class="row text-center just-pad" >
            
               <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.2s" >
-                        <i class=" fa fa-database fa-5x "></i>
-                   <h4 ><strong> Contact your host/guest </strong></h4>
+                        <i class=" fa fa-heart fa-5x " ></i>
+                   <h4 ><strong> Trust your host/guest </strong></h4>
                   <p>
-                      With the help of Huest both the guest and the host can directly contact each other and if all goes well then they can make a deal. 
+                      With the help of huestIN both the guest and the host can trust each other.We just help with the first payment of rent before moving  and after that they can directly exchange money. 
                   </p>
                     </div>
                
                <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.8s" >
-                        <i class=" fa fa-send fa-5x "></i>
+                        <i class="fa fa-thumbs-up fa-5x"></i>
                    <h4 ><strong> Awesomeness Loaded </strong></h4>
-                  <p>We at Huest do not charge any commission. We just wanted to solve a genuine problem which were faced by the students and the professionals.Though a little donation would help a lot!
-                                        </p>
+                  <p>The host may provide you with the 7 days trial period.So if not satisfied you can find new host after 7 days.If you are moving in a group we will help you all.
+                       </p>
                     </div>
                      <div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 1.4s" >
-                        <i class=" fa fa-puzzle-piece fa-5x "></i>
+                       <i class="fa fa-star fa-5x"></i>
                           <h4 ><strong> Rate your host/guest </strong></h4>
                   <p>
-                      Through Huest rate and describe your experience with current guest or host so that the other guest or host can trust each other well before making any deal.
+                      Through huestIN rate and describe your experience with current guest or host so that the other guest or host can trust each other well before making any deal.
                   </p>
                     </div>
             </div>
@@ -175,21 +173,21 @@
                         </h3>
                                    
                    <h4 data-scroll-reveal="enter from the bottom after 0.6s">
-               When I moved to a new location for work,Huest made it very easy for me to find a decent accomodation and food facilty.
+                       When I moved to a new location for work,huestIN made it very easy for me to find a decent accommodation and food facilty.</h4>
                          
                       <h5 data-scroll-reveal="enter from the bottom after 0.7s"> -Anand Sagar,software engineer,TCS.</h5>
                        
-                  <h4 data-scroll-reveal="enter from the bottom after 0.8s">     When i got admitted to a college,i didn't want to stay in hostel,Huest made it very easy for me find a paying guest type facility.
+                  <h4 data-scroll-reveal="enter from the bottom after 0.8s">     When i got admitted to a college,i didn't want to stay in hostel,huestIN made it very easy for me find a paying guest type facility.
                          
                        
-                      <h5 data-scroll-reveal="enter from the bottom after 0.8s"> -Aman kumar,Jadavpur University
+                      <h5 data-scroll-reveal="enter from the bottom after 0.8s"> -Aman kumar,Jadavpur University</h5>
                        </h4>
                      
                   
      
               
               
-            </div>
+                  </div>
                 
                </div>
                 </div>
@@ -197,51 +195,10 @@
            
        </section>
        <!--TESTIMONIAL SECTION END-->
-       <!-- login section-->
-	<section class="login" id="login" >
- <div class="container">
-           <div class="row text-center" >
-           
-               <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-               
-                <h3 data-scroll-reveal="enter from the bottom after 0.1s">
-                    <strong>
-                  login as
-                        </strong>
-                        </h3>
-                                   
-                         <form action="loginServlet" method="post">
-
-<table>
-<tr>
-<div class="col-lg-4 col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.8s" >
-<table>
-<tr>
-<td>LOGIN:</td><td><input type="text" name="loginName"></td>
-</tr>
-<tr>
-
-<td>PASSWORD:</td><td><input type="password" name="pass"></td>
-</tr>
-
-<tr><td>new user register now!</td><td><input type="submit" value="Submit"></td>
-
-
-
-
-</table>
-</form>     
-  </div>   
+       
               
-              
-            </div>
-                
-               </div>
-     
-               
-       </section>
-    
-    <section class="developers" id="developers" >
+             
+  <!--  <section class="developers" id="developers" >
  <div class="container">
            <div class="row text-center" >
            
@@ -281,7 +238,7 @@
                        
                   </p>
                  --> 
-                    </div>
+                    <!--</div>
                      <div class="col-lg-3 col-md-4 col-sm-4" data-scroll-reveal="enter from the right after 0.2s" >
                         <img src="assets/img/4.jpg" class="img-circle img-responsive" alt=""  />
                           <h4 ><strong> Aman Kumar </strong></h4>
@@ -321,7 +278,7 @@
                     <strong>ADDRESS
                      :</strong>
                         <p>
-                       Huest corp,near cake factory,<br>
+                       huestIN corp,near cake factory,<br>
                        salt lake sec V
                         <br />
                          kolkata-700094
@@ -346,12 +303,69 @@
             
             </div>
           </section>
+    
+    <section class="contact" id="follow" >
+            <div class="container">
+                 <div class="row text-center " >
+           
+               <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+               
+                <h3 data-scroll-reveal="enter from the bottom after 0.1s">
+                    <strong>
+                   FOLLOW US
+                        </strong>
+                        </h3>
+                
+            </div>
+                
+               </div>
+        <div class="row " >
+             <div class="row text-center just-pad" >
+                 <div class="col-lg-offset-1 col-lg-1 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" data-scroll-reveal="enter from the right after 0.2s">
+                    <strong>Facebook
+                     </strong>
+                        <p>
+                      <a href="#"><i class="fa fa-facebook-square" style="font-size:48px;color:#3B5998"></i>
+                      </a>
+                     </p>
+                 </div>
+                     <div class="col-lg-1  col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 " data-scroll-reveal="enter from the right after 0.2s">
+                 
+                     <strong>Twitter
+                     </strong><p>
+    	
+                         <a href="#"><i class="fa fa-twitter" style="font-size:48px;color:#1DA1F2"></i></a>
+                          
+								
+								
+                        </p>
+                     
+                 </div>
+               
+                      
+                <div class="col-lg-1 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" data-scroll-reveal="enter from the left after 0.4s">
+                    <strong>LinkedIn</strong>
+                     <p>
+                         <a href="#"><i class="fa fa-linkedin-square" style="font-size:48px;color:#0077B5"></i></a>
+                 </p> 
+                </div>
+                <div class="col-lg-1 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" data-scroll-reveal="enter from the right after 0.2s">
+                 <strong>Youtube</strong>
+                      <p> <a href="#"><i class="fa fa-youtube" style="font-size:48px;color:#CC181E"></i></a> 
+                    </p>
+                      </div>
+    </div>
+                </div>
+            </div>
+            
+        
+          </section>
      <!--CONTACT SECTION END-->
      <div style="text-align: center">
-<img src="playimage.png" style="vertical-align:center">
+<img src="assets/img/playimage.png" style="vertical-align:center">
 </div>
     <div class="myfooter" >
-                     &copy; 2015 huest.com 
+                     &copy; 2015 huestIN.com 
 
     </div>
     <!--FOOTER SECTION END-->
@@ -367,6 +381,17 @@
     <script src="assets/js/styleSwitcher.js"></script>
         <!--  Custom Scripts -->    
     <script src="assets/js/custom.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDyyfT-op4Dqb6X78zwz4QNv9cjf56Nc2o",
+    authDomain: "shop-together.firebaseapp.com",
+    databaseURL: "https://shop-together.firebaseio.com",
+    storageBucket: "shop-together.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
    
 </body>
 </html>

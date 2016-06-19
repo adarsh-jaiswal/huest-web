@@ -1,0 +1,353 @@
+<!DOCTYPE>
+
+<html>
+	<head>
+		<link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+		<script src="assets/js/firebase.js"></script>
+		        <script src="assets/js/guestValidation.js"></script>
+                 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+       
+<style>
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none;
+    }
+    </style>
+		<script src="assets/js/guestFirebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script><!--angular fire -->
+     <script src="assets/js/guestApp.js"></script>
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
+		<!--<link href="bootstrap/bootstrap.css" rel="stylesheet" />-->
+<!-- =========================================================================================================-->
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Guest</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+     <!-- STYLE SWITCHER  CSS -->
+<link href="assets/css/styleSwitcher.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />  
+     <!--GREEN STYLE VERSION IS BY DEFAULT, USE ANY ONE STYLESHEET FROM TWO STYLESHEETS (green or red) HERE-->
+     <link href="assets/css/themes/green.css" id="mainCSS" rel="stylesheet" />   
+  <!-- Google	Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+	
+</head>
+<body >
+
+    <!--END STYLE SWITCHER-->
+ <div class="navbar navbar-inverse navbar-fixed-top move-me" id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                &nbsp;<a class="navbar-brand" href="#">HuestIN</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="index.html">HOME</a></li>
+                     <li><a href="index.html">FEATURES</a></li>
+                   
+                   <!-- <li><a href="index.html">DEVELOPERS</a></li>-->
+                     
+                     <li><a href="index.html">CONTACT</a></li>
+                     <li><a href="login.html">LOGIN</a></li>
+                     <li><a href="mailto:info@domain.com?Subject=Product%20Enquiry" target="_top"> <i class="fa fa-envelope-o"></i><span class="home-mail">e-mail: adarshakijais@gmail.com</span></a></li>
+                </ul>
+            </div>
+           
+        </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+   <!-- ==============================================================================================-->     
+	
+	<div class="container" ng-app = "mainApp" ng-controller = "guestController">
+  <h2 class="text-center">REGISTER</h2>
+			
+					
+           <h2 align="center">Account:</h2>
+           
+            <form class="form-horizontal" role="form"  name ="registration" novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : registration.email.$invalid && !registration.email.$pristine }">
+        
+      <label class="control-label col-lg-4 col-sm-5" for="email">Email:</label>
+      <div class="col-sm-5">
+        <input type="email" class="form-control" name ="email" id="email" ng-model ="userInfo.email" placeholder="Enter email" required>
+          <span style = "color:red" ng-show = "registration.email.$touched && registration.email.$invalid">
+                        <span ng-show = "registration.email.$error.required">Email is required.</span>
+                        <span ng-show = "registration.email.$error.email">Invalid email address.</span>
+          </span>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : registration.password.$invalid && !registration.password.$pristine }">
+      <label class="control-label col-lg-4 col-sm-5" for="pwd">Set Password:</label>
+      <div class="col-sm-5">          
+        <input type="password" class="form-control" id="pwd" name="password" ng-model="userInfo.password" ng-minlength="5" ng-maxlength="8" placeholder="Enter password" required>
+       <span style = "color:red" ng-show ="registration.password.$touched && registration.password.$invalid">
+                        <span  ng-show = " registration.password.$error.required">Password is required.</span>
+                        <span  ng-show = " !registration.password.$error.required && registration.password.$invalid">Password should be min 5-8 characters long.</span>
+                     </span>
+        </div>
+    </div>
+    <h2 align="center">Profile:</h2>
+    <div class="form-group"  ng-class="{ 'has-error' : registration.firstName.$invalid && !registration.firstName.$pristine }">
+      <label class="control-label col-lg-4  col-sm-5" for="firstName">First Name:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="firstName" id="firstName" ng-model ="userInfo.firstName" ng-pattern="/^[a-zA-Z]+$/" placeholder="First Name" required>
+      <span style = "color:red" ng-show ="registration.firstName.$touched && registration.firstName.$invalid">
+                        <span ng-show = "registration.firstName.$error.required">First Name is required.</span>
+                    <span ng-show = "!registration.firstName.$error.required && registration.firstName.$invalid">First Name should be alphabets only.</span>
+                               
+          </span>
+        </div>
+    </div>
+                <div class="form-group" ng-class="{ 'has-error' : registration.lastName.$invalid && !registration.lastName.$pristine }">
+      <label class="control-label col-lg-4 col-sm-5" for="lastName">Last Name:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" id="lastName" ng-model="userInfo.lastName" ng-pattern="/^[a-zA-Z]+$/" name="lastName" placeholder="Last Name" required>
+      <span style = "color:red" ng-show = "registration.lastName.$touched && registration.lastName.$invalid">
+                        <span ng-show = "registration.lastName.$error.required">Last Name is required.</span>
+                     <span ng-show = "!registration.lastName.$error.required && registration.lastName.$invalid">Last Name should be alphabets only.</span>
+                  </span>   
+                    </div>
+    </div>
+                <div class="form-group" >
+       
+      <label class="control-label col-lg-4 col-sm-5" >Gender:</label>
+      <div class="radio col-sm-5">
+  <label class="control-label  col-xs-offset-1 col-xs-3">
+    <input type="radio" name="gender" ng-model="userInfo.gender" id="male" value="male" checked>
+   Male </label>
+
+  <label class="control-label col-xs-4 ">
+    <input type="radio" name="gender" ng-model="userInfo.gender" id="female" value="female" >
+   Female</label>
+</div>
+          </div>
+       <div class="form-group" >
+        <label class="control-label col-lg-4 col-sm-5 col-xs-5">Occupation</label>
+        <div class="col-xs-5 ">
+            <select  name="occupation" class="form-control" ng-model="userInfo.occupation" >
+                 <option selected disabled>Choose here</option>
+                <option value="student" selected>Student</option>
+                <option value="working">Working</option>
+                <option value="tourist">tourist</option>
+                <option value="others">Others</option>
+                
+            </select>
+        </div>
+    </div>         
+     <div class="form-group" ng-class="{ 'has-error' : registration.phoneNumber.$invalid && !registration.phoneNumber.$pristine }">
+      <label class="control-label col-lg-4 col-sm-5" for="phoneNumber">Mobile:</label>
+      <div class="col-sm-5">          
+        <input type="tel"  class="form-control" name="phoneNumber" id="phoneNumber" ng-pattern="/^\d{10}$/"  ng-model="userInfo.phoneNumber"  placeholder="Enter your phone number" required/>
+        <span style = "color:red" ng-show = "registration.phoneNumber.$touched && registration.phoneNumber.$invalid">
+            <span ng-show = "registration.phoneNumber.$error.required">Phone number is required .</span>
+            <span  ng-show = "!registration.phoneNumber.$error.required && registration.phoneNumber.$invalid ">Phone number must be of 10 digits.
+            </span>
+          </span>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : registration.address.$invalid && !registration.address.$pristine }">
+      <label class="control-label col-lg-4 col-sm-5" for="address">Address:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="address" ng-model="userInfo.address" id="address" placeholder="Enter Address" required>
+          <span style = "color:red" ng-show = "registration.address.$touched && registration.address.$invalid">
+            <span ng-show = "registration.address.$error.required">Address is required .</span>
+            <span  ng-show = "!registration.address.$error.required && registration.address.$invalid ">address is invalid.
+            </span>
+          </span>
+      </div>
+    </div>
+                <div class="form-group" ng-class="{ 'has-error' : registration.pin.$invalid && !registration.pin.$pristine }">
+      <label class="control-label col-lg-4 col-sm-5" for="pin">Pin Code:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="pin" ng-model="userInfo.pin" ng-pattern="/^\d{6}$/" placeholder="Enter Your Area Pin" id="pin" required>
+           <span style = "color:red" ng-show = "registration.pin.$touched && registration.pin.$invalid">
+            <span ng-show = "registration.pin.$error.required">Pin code is required .</span>
+            <span  ng-show = "!registration.pin.$error.required && registration.pin.$invalid ">Pin Code must be 6 digits long.
+            </span>
+          </span>
+      </div>
+    </div>
+                <div class="form-group" ng-class="{ 'has-error' : registration.city.$invalid && !registration.city.$pristine }">
+      <label class="control-label col-lg-4 col-sm-5" for="city">City:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="city" ng-model="userInfo.city" placeholder="Enter City" id="city" required>
+          <span style = "color:red" ng-show = "registration.city.$touched && registration.city.$invalid">
+            <span ng-show = "registration.city.$error.required">City Name is required .</span>
+            <span  ng-show = "!registration.city.$error.required && registration.city.$invalid ">City Name is invalid.
+            </span>
+          </span>
+      </div>
+    </div>
+                <div class="form-group" ng-class="{ 'has-error' : registration.state.$invalid && !registration.state.$pristine }">
+      <label class="control-label col-lg-4 col-sm-5" for="state">State:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" name="state" ng-model="userInfo.state"placeholder="Enter State" id="state" required>
+          <span style = "color:red" ng-show = "registration.state.$touched && registration.state.$invalid">
+            <span ng-show = "registration.state.$error.required">State Name is required .</span>
+            <span  ng-show = "!registration.state.$error.required && registration.state.$invalid ">State Name is invalid.
+            </span>
+          </span>
+      </div>
+    </div>
+					
+		
+			
+    
+    
+    
+    <!--<div class="content-guest">
+				<h1 style="position:absolute;top:30px;left:500px">REGISTER</h1>
+				<div class="guest">
+					
+						<legend><h2>Account:</h2></legend><br>
+						<table border="0" width="90%">
+							<tr class="tr">
+								<td><label for="email">Email:</label></td>
+								<td><input type="text" id="email" name="email" placeholder="Email" size="30px;" class="input_type"/></td>
+							</tr>
+							<tr class="tr">
+								<td><label for="password">Set Password:</td>
+								<td><input type="password" id="password" name="password" placeholder="Password" size="30px;" class="input_type"/></td>
+							</tr>
+						</table>
+					<br>
+					
+						<legend><h2>Profile:</h2></legend>
+						<table width="100%" border="0">
+							<tr class="tr">
+								<td><label for="fname">First Name:</td>
+								<td><input type="text" id="fname" name="fname" placeholder="First Name" size="30px;" class="input_type"/></td>
+							</tr>
+							<tr class="tr">
+								<td><label for="lname">Last Name:</td>
+								<td><input type="text" id="lname" name="lname" placeholder="Last Name" size="30px;" class="input_type"/></td>
+							</tr>
+							<tr class="tr">
+								<td><label for="mobile">Mobile:</label></td>
+								<td><input type="text" name="mobile" placeholder="Enter Mobile Number" id="mobile" size="30px;" class="input_type"/></td>
+							</tr>
+							<tr class="tr">
+								<td>Gender:</td>
+								<td>
+								<label for="">Male:</label><input type="radio" name="sex" id="male" value="Male" checked/>&nbsp;
+									<label for="">Female:</label><input type="radio" name="sex" value="Female" id="female"/>
+								</td>
+							</tr>
+							<tr class="tr">
+								<td>Occupation:</td>
+								<td>
+									<select class="input_type" id="occupation" name="occupation">
+										<!--<option value="default">Select</option>-->
+										<!--<option value="student">Student</option>
+										<option value="working">Working</option>
+										<option value="others">Others</option>
+									<!--</select>
+								</td>
+							</tr>
+							<tr class="tr">
+								<td><label  for="address">Address:</label></td>
+								<td>
+									<input type="text" name="address" placeholder="Enter address" id="address" size="30px;" class="input_type"/>
+								</td>
+							</tr>
+							<tr class="tr">
+								<td><label for="pin">Pin Code:</label></td>
+								<td><input type="text" name="pin" placeholder="Enter Your Area Pin" id="pin" size="30px;" class="input_type"/></td>
+							</tr>
+							<tr class="tr">
+								<td><label for="city">City:</label></td>
+								<td><input type="text" name="city" placeholder="Enter City" id="city" size="30px;" class="input_type"/></td>
+							</tr>
+							<tr class="tr">
+								<td><label for="state">State:</label></td>
+								<td><input type="text" name="state" placeholder="Enter State" id="state" size="30px;" class="input_type"/></td>
+							</tr>
+						</table>
+					
+					<table border="0">
+						<tr class="tr">
+							<td width="230px" height="100px"></td>
+							<td><input type="submit" value="Continue" onclick="formValidation()" class="guest-button"/></td>
+						</tr>
+					</table>
+				</div>
+			</div>-->
+                <div class="form-group row">
+    <div class="col-lg-offset-5 col-sm-offset-5 col-sm-10 col-xm-7" >
+        <button ng-disabled = " registration.email.$pristine &&
+                        registration.email.$invalid ||registration.password.$pristine &&
+                        registration.password.$invalid || 
+                        registration.firstName.$pristine && registration.firstName.$invalid || 
+                               
+                        registration.lastName.$pristine &&
+                        registration.lastName.$invalid || registration.phoneNumber.$pristine &&
+                        registration.phoneNumber.$invalid || registration.address.$pristine &&
+                        registration.address.$invalid  || registration.pin.$pristine &&
+                        registration.pin.$invalid  || registration.city.$pristine &&
+                        registration.city.$invalid  || registration.state.$pristine &&
+                        registration.state.$invalid  
+                               
+                    " 
+                
+                
+                ng-click="saveUser(userInfo)" class="btn btn-success">Submit</button>
+                  
+      <!--<input type="submit" value="Continue" onclick="hostFormValidation()" class="btn btn-success"/>-->
+    </div>
+  </div>
+                      
+               
+            </form>
+        
+</div>
+		
+      
+       <div class="myfooter" >
+           
+							
+					<div class="footer-content">
+                       
+                            
+                     &copy; 2015 huest.com 
+                                </div>
+        
+    
+    </div>
+
+	</body>
+       
+
+     <!--FOOTER SECTION END-->
+    <!--  Jquery Core Script -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="assets/js/bootstrap.js"></script>
+     <!--  Scrolling Reveal Script -->
+    <script src="assets/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts --> 
+    <script src="assets/js/jquery.easing.min.js"></script>
+     <!--  Style Switcher Scripts -->
+    <script src="assets/js/styleSwitcher.js"></script>
+        <!--  Custom Scripts -->    
+    <script src="assets/js/custom.js"></script>
+   
+</html>
+
+

@@ -1,0 +1,339 @@
+
+<html>
+	<head>
+		<script src="assets/js/jquery-1.10.2.js"></script>
+		<script src="assets/js/firebase.js"></script>
+		<script src="assets/js/logout.js"></script>
+        <script> 
+			$(document).ready(function(){
+				$("#accommodation").click(function(){
+					$("#panel").slideToggle("fast");
+				});
+			});
+			$(document).ready(function(){
+				$("#food").click(function(){
+					$("#panel2").slideToggle("fast");
+				});
+			});
+            $(document).ready(function(){
+				$("#sharing").click(function(){
+					$("#panel3").slideToggle("slow");
+				});
+			});
+            $(document).ready(function(){
+				$("#flat").click(function(){
+					$("#panel4").slideToggle("slow");
+				});
+			});
+            
+            $(document).ready(function(){
+				$("#chkSingle").click(function(){
+					$("#rate").slideToggle("fast");
+				});
+			});
+             $(document).ready(function(){
+				$("#chkSingle").click(function(){
+					$("#singleRate").slideToggle("fast");
+				});
+			});
+             $(document).ready(function(){
+				$("#chkSingle").click(function(){
+					$("#rateTrial").slideToggle("fast");
+				});
+			});
+            $(document).ready(function(){
+				$("#chkSharing").click(function(){
+					$("#rate2").slideToggle("fast");
+				});
+			});
+            $(document).ready(function(){
+				$("#chkSharing").click(function(){
+					$("#sharingRate").slideToggle("fast");
+				});
+			});
+            $(document).ready(function(){
+				$("#chkSharing").click(function(){
+					$("#rateTrial2").slideToggle("fast");
+				});
+			});
+            
+            
+		</script>
+<!-- =========================================================================================================-->
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>welcome host</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+     <!-- STYLE SWITCHER  CSS -->
+<link href="assets/css/styleSwitcher.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />  
+     <!--GREEN STYLE VERSION IS BY DEFAULT, USE ANY ONE STYLESHEET FROM TWO STYLESHEETS (green or red) HERE-->
+     <link href="assets/css/themes/green.css" id="mainCSS" rel="stylesheet" />   
+  <!-- Google	Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+	
+</head>
+<body >
+	<script>
+		/*var user=sessionStorage.getItem("username");
+		if(user==null)
+			window.open('login.html','_self',false);*/
+	</script>
+    <!--END STYLE SWITCHER-->
+ <div class="navbar navbar-inverse navbar-fixed-top move-me" id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                &nbsp;<a class="navbar-brand" href="#">HUEST</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="index.html">HOME</a></li>
+                     <li><a href="index.html">FEATURES</a></li>
+                   
+                   <!-- <li><a href="index.html">DEVELOPERS</a></li>-->
+                     
+                     <li><a href="index.html">CONTACT</a></li>
+                    <li><a href="account.html">ACCOUNT</a></li>
+					<li><a href="login.html" onclick="logout()">LOGOUT</a></li>
+                     <li><a href="mailto:info@domain.com?Subject=Product%20Enquiry" target="_top"> <i class="fa fa-envelope-o"></i><span class="home-mail">e-mail: adarshakijais@gmail.com</span></a></li>
+                </ul>
+            </div>
+           
+        </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+   <!-- ==============================================================================================-->  
+		<link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+		<link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
+    
+    <div class="content-welcome" align="center">
+				
+                    <legend><h1>Welcome <p id="name"></p></h1></legend><br>
+        
+       
+          <p style="font-size:20px;"><label for="food">Update Food details:</label><input type="checkbox" id="food" style="width:40px;"/></p>
+           <div id="panel2" > 
+            <table border="0" style="position:absolute;left:200px;width:550px;">
+                        <tr class="tr">
+									<td width="200px" style="font-size:20px;">Per Day charge:</td>
+									<td><input type="text" id="pdc" /></td>
+                        </tr>
+								<tr class="tr">
+									<td style="font-size:20px;">Per Week charge:</td>
+									<td><input type="text" id="pwc"/></td>
+								</tr>
+								<tr class="tr">
+									<td style="font-size:20px;">Per Month charge:</td>
+									<td><input type="text" id="pmc"/></td>
+								</tr>
+                <tr class="tr">
+										<td style="font-size:20px;">Limits:</td>
+									<td colspan="3"><input type="text" id="limits" placeholder="" size="10px"/>
+                                        <p style="font-size:15px;">*total number of guests that you can feed.</p></td>
+								</tr>
+				<tr class="tr">
+									<td style="font-size:20px;">Menu of the Week:</td>
+									<td colspan="3"><textarea id="menuDesc"style="height:70px; width:80%"></textarea>
+								</tr>
+                               
+                      
+    
+    
+                 </table>
+            
+        </div>
+         <p style="font-size:20px;"><label for="accommodation">Update accommodation details:</label><input type="checkbox" id="accommodation" style="width:40px;"/></p>
+        <div id="panel">
+            <table border="0" style="position:absolute;left:200px;width:600px;">   
+									<tr class="tr">
+									<td width="200px">Description of Place:</td>
+									<td colspan="3"><textarea style="height:70px; width:100%"></textarea><br>
+                                    <p style="font-size:15px;">*nearby colleges and offices from your place.</p></td>  								
+                                    </tr>
+                                    <tr class="tr">
+										<td width="180px">Images:</td>
+										
+									
+									<td colspan="2"><input type="file" name="file" onchange="readURL(this)" style="position:absolute;bottom:10px;width:220px;right:120px"/></td>
+									<td>
+										<div class="image_div">
+											<img src="images/samplecover.jpg" id="user_image" height="110px" width="130px"/>
+										</div>
+                                        
+									</td>
+                </tr>
+                
+								</table>
+            <br><br><br><br><br><br><br><br><br><br><br>
+             <p style="font-size:15px;"><label for="sharing">Sharing:</label><input type="checkbox" id="sharing" style="width:40px;"/></p>
+                <div id="panel3" style="height:300px;position:relative;">
+                    
+							
+            <table border="0" style="position:absolute;left:200px;width:600px;">
+									<tr class="tr">
+										<td>Single:</td>
+										<td><input type="checkbox" id="chkSingle"/></td>
+										<td id="rate">Rate:</td>
+										<td><input type="text" id="singleRate" size="10px"/></td>
+									</tr>
+                                    <tr class="tr" id="rateTrial">
+										<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+										<td width="30px"><input type="checkbox" id="chkSingleTrial"/></td>
+										<td >Rate:</td>
+										<td><input type="text" id="trialSingleRate" size="10px"/></td>
+									</tr>
+									<tr class="tr">
+										<td>2-Sharing:</td>
+										<td><input type="checkbox" id="chkSharing"/></td>
+										<td id="rate2">Rate:</td>
+										<td><input type="text" id="sharingRate" size="10px"/></td>
+									</tr>
+									<tr class="tr" id="rateTrial2">
+										<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+										<td width="30px"><input type="checkbox" id="chkSharingTrial"/></td>
+										<td>Rate:</td>
+										<td><input type="text" id="trialSharingRate" size="10px"/></td>
+									</tr>
+									
+									<tr class="tr">
+										<td width="200px">Limits:</td>
+										<td><input type="text" id="limits" placeholder="" size="10px"/></td>
+                                        <td colspan="2" width="200px" style="font-size:10px;">*total number of guests that you can accommodate.</td>
+									</tr>
+                                    
+                    </table></div>		
+            <p style="font-size:15px;"><label for="accommodation">Flat:</label><input type="checkbox" id="flat" style="width:40px;"/></p>
+                                <div id="panel4" style="height:250px;position:relative;">
+                                    <table border="0" style="position:absolute;left:0px;width:600px;">
+									<tr class="tr">
+										<td>1 BHK:</td>
+										<td><input type="checkbox" id="chkOneBHK"/></td>
+										<td id="">Rate:</td>
+										<td><input type="text" id="oneBHKRate" size="10px"/></td>
+									</tr>
+                                    <tr class="tr" id="">
+										<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+										<td width="30px"><input type="checkbox" id="chkTrial"/></td>
+										<td >Rate:</td>
+										<td><input type="text" id="trialOneBHK" size="10px"/></td>
+									</tr>
+									<tr class="tr">
+										<td>2 BHK:</td>
+										<td><input type="checkbox" id="chktwoBHK"/></td>
+										<td id="">Rate:</td>
+										<td><input type="text" id="twoBHKRate" size="10px"/></td>
+									</tr>
+									<tr class="tr" id="">
+										<td width="200px" style="font-size:15px;">Provide 7 day trial:</td>
+										<td width="30px"><input type="checkbox" id="chkTrial"/></td>
+										<td>Rate:</td>
+										<td><input type="text" id="trialtwoBHK" size="10px"/></td>
+									</tr>
+									
+									
+                                    
+									
+									
+								</table>
+							
+                                    
+                                    </div>
+                   
+                                 
+    
+                
+                
+                
+    </div>
+    </div>    
+
+    <script >
+		var userType;
+		var user=sessionStorage.getItem("username");
+		var encodedEmail = user.replace(/[.]/g , ",");
+		var ref = new Firebase("https://shop-together.firebaseio.com/").child("USERS");
+		ref.on("value", function(snapshot) {
+			userType=snapshot.child(encodedEmail).val();
+			var userTypeRef = new Firebase("https://shop-together.firebaseio.com/").child(userType).child(encodedEmail);
+			userTypeRef.on("value", function(snapshot) {
+                
+				document.getElementById("name").innerHTML=snapshot.child("firstName").val();
+			}, function (errorObject) {
+				console.log("The read failed: " + errorObject.code);
+			});    
+		}, function (errorObject) {
+			console.log("The read failed: " + errorObject.code);
+		});
+
+	</script>
+    </body>
+</html>
+    <style>
+#panel {
+    padding:20px;
+    display:none;
+	height:200px;
+}
+#panel2{
+    padding:20px;
+    display:none;
+	height:400px;
+}
+ #panel3{
+    padding:20px;
+    display:none;
+	height:400px;
+}
+    #panel4{
+    padding:20px;
+    display:none;
+	height:400px;
+}
+        #rate{
+   
+    display:none;
+	
+}
+    #rate2{
+   
+    display:none;
+	
+}
+    #singleRate{
+   
+    display:none;
+	
+}
+    #sharingRate{
+   
+    display:none;
+	
+}
+    #rateTrial{
+   
+    display:none;
+	
+}
+    #rateTrial2{
+   
+    display:none;
+	
+}  

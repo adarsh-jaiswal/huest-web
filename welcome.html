@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Welcome</title>
+        <script src="assets/js/firebase.js"></script>
+    </head>
+    <body>
+    Welcome <p id="name"></p> 
+    <script >
+        var userType;
+        var user=sessionStorage.getItem("username");
+        var encodedEmail = user.replace(/[.]/g , ",");
+        var ref = new Firebase("https://shop-together.firebaseio.com/").child("USERS");
+        ref.on("value", function(snapshot) {
+            userType=snapshot.child(encodedEmail).val();
+            var userTypeRef = new Firebase("https://shop-together.firebaseio.com/").child(userType).child(encodedEmail);
+            userTypeRef.on("value", function(snapshot) {
+                console.log(snapshot.child("firstName").val());
+                document.getElementById("name").innerHTML=snapshot.child("firstName").val();
+            }, function (errorObject) {
+              console.log("The read failed: " + errorObject.code);
+            });    
+        }, function (errorObject) {
+          console.log("The read failed: " + errorObject.code);
+        });
+        
+        </script>
+        
+        
+    </body>  
+</html> 
